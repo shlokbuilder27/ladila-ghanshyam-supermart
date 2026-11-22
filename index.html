@@ -6,6 +6,8 @@
   <title>Ladila Shri Ghanshyam Super Store &amp; Kirana | Dabholi Char Rasta, Surat</title>
   <meta name="description" content="Daily fresh chakki atta, sortex grains, branded snacks, pure groundnut oil, Bilona cow ghee &amp; monthly kirana delivered across Dabholi Char Rasta, Bhoomidarshan &amp; Kailash Nagar Society, Surat." />
   <meta name="theme-color" content="#FBF6EE" />
+  <meta name="color-scheme" content="light" />
+  <meta name="supported-color-schemes" content="light" />
 
   <!-- Google Fonts: Fraunces (Heritage Display), Plus Jakarta Sans (UI), Space Mono (Batch Stamps) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,6 +44,8 @@
 
   <style>
     :root {
+      color-scheme: light;
+      supported-color-schemes: light;
       --bg-paper: #FBF6EE;
       --bg-surface: #F2E6D4;
       --bg-card: #EFE0C9;
@@ -1619,7 +1623,9 @@
             updateFilterButtons();
           }
 
-          window.scrollTo({ top: 0, behavior: "instant" });
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
 
           // Step C: Shutter Opens
           bladeTop.style.transform = "translateY(-100%)";
