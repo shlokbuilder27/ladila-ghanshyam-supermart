@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ladila Shri Ghanshyam Super Store &amp; Kirana | Dabholi Char Rasta, Surat</title>
+  <meta name="description" content="Daily fresh chakki atta, sortex grains, branded snacks, pure groundnut oil, Bilona cow ghee &amp; monthly kirana delivered across Dabholi Char Rasta, Bhoomidarshan &amp; Kailash Nagar Society, Surat." />
+  <meta name="theme-color" content="#FBF6EE" />
+
+  <!-- Google Fonts: Fraunces (Heritage Display), Plus Jakarta Sans (UI), Space Mono (Batch Stamps) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+          },
+          colors: {
+            paper: '#FBF6EE',
+            surface: '#F2E6D4',
+            card: '#EFE0C9',
+            ink: '#23150D',
+            muted: '#5C4435',
+            saffron: '#D95D1E',
+            saffronDark: '#B54710',
+            turmeric: '#C88A1E',
+            leaf: '#1E6F3D',
+            leafDark: '#16542E',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-paper: #FBF6EE;
+      --bg-surface: #F2E6D4;
+      --bg-card: #EFE0C9;
+      --text-ink: #23150D;
+      --text-muted: #5C4435;
+      --accent-saffron: #D95D1E;
+      --accent-turmeric: #C88A1E;
+      --accent-leaf: #1E6F3D;
+      --liquid-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-paper);
+      color: var(--text-ink);
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Tactile Risograph Paper Grain */
+    .paper-grain-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 45;
+      opacity: 0.038;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .riso-box {
+      border: 1.5px solid #23150D;
+      box-shadow: 3px 3px 0px #23150D;
+      transition: transform 0.28s var(--liquid-ease), box-shadow 0.28s var(--liquid-ease), background-color 0.25s ease;
+    }
+
+    .riso-box-sm {
+      border: 1.5px solid #23150D;
+      box-shadow: 2px 2px 0px #23150D;
+      transition: transform 0.24s var(--liquid-ease), box-shadow 0.24s var(--liquid-ease);
+    }
+
+    .riso-press:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0px #23150D;
+    }
+
+    .riso-press:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px #23150D;
+    }
+
+    /* Serrated Receipt Border */
+    .receipt-serrated-top {
+      background-image: radial-gradient(circle at 10px -5px, transparent 12px, #FBF6EE 13px);
+      background-size: 20px 20px;
+      background-repeat: repeat-x;
+      background-position: top;
+      padding-top: 14px;
+    }
+
+    /* Shutter Blade Animation */
+    .shutter-blade {
+      transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    /* Sacred Intro Preloader Animations (2-3s Loading -> Fast Slide Left + Fade) */
+    #sacred-intro-splash {
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #sacred-intro-splash.splash-dismissed {
+      transform: translateX(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    @keyframes sacredGlow {
+      0%, 100% {
+        box-shadow: 0 0 25px rgba(217, 93, 30, 0.3), 0 0 50px rgba(200, 138, 30, 0.2);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 45px rgba(217, 93, 30, 0.55), 0 0 85px rgba(200, 138, 30, 0.4);
+        transform: scale(1.02);
+      }
+    }
+    .sacred-glow-pulse {
+      animation: sacredGlow 2.4s ease-in-out infinite;
+    }
+    @keyframes progressFill {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    .sacred-progress-bar {
+      animation: progressFill 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    .site-reveal-enter {
+      animation: siteReveal 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes siteReveal {
+      0% {
+        opacity: 0;
+        transform: translateX(35px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GroceryStore",
+    "name": "Ladila Shri Ghanshyam Super Store & Kirana",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Near Shree Sahajanand Chowk, Dabholi Char Rasta, Ved Road",
+      "addressLocality": "Surat",
+      "addressRegion": "Gujarat",
+      "postalCode": "395004",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919876543210",
+    "openingHours": "Mo-Su 07:30-21:30"
+  }
+  </script>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-turmeric selection:text-ink">
+
+  <div class="paper-grain-overlay" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       SACRED INTRO SPLASH / PRELOADER (LADILA GHANSHYAM MAHARAJ)
+       Runs for 2-3 seconds on first load, then slides out to the left fast with fade
+       ======================================================================== -->
+  <aside id="sacred-intro-splash" 
+         class="fixed inset-0 z-[200] bg-ink flex flex-col items-center justify-center p-4 sm:p-6 select-none overflow-hidden text-center cursor-pointer"
+         aria-label="Welcome to Ladila Shri Ghanshyam Super Store">
+    
+    <!-- Sacred Radial Aura in Background -->
+    <div class="absolute inset-0 pointer-events-none opacity-25 bg-[radial-gradient(circle_at_center,_#C88A1E_0%,_#D95D1E_35%,_transparent_70%)]"></div>
+
+    <!-- Quick Skip Button (Top Right) -->
+    <button type="button" id="splash-skip-btn" 
+            class="absolute top-5 right-5 z-20 px-3.5 py-1.5 rounded-full bg-paper/10 hover:bg-paper/20 border border-white/20 text-surface/85 hover:text-white font-mono text-xs font-bold transition flex items-center gap-1.5">
+      <span>Skip Intro</span>
+      <span aria-hidden="true">→</span>
+    </button>
+
+    <div class="relative z-10 flex flex-col items-center max-w-sm w-full mx-auto">
+      
+      <!-- Auspicious Invocation Header -->
+      <span class="font-mono text-[11px] sm:text-xs text-turmeric uppercase tracking-[0.22em] font-bold mb-3 drop-shadow-sm">
+        ॥ શ્રી સ્વામિનારાયણો વિજયતે ॥
+      </span>
+
+      <!-- Temple Sinhasan Frame with Ladila Ghanshyam Maharaj Murti -->
+      <div class="relative w-44 sm:w-52 aspect-[399/501] rounded-2xl overflow-hidden border-2 border-turmeric sacred-glow-pulse shadow-2xl bg-black">
+        <img src="./assets/ghanshyam-maharaj.jpg" 
+             alt="લાડીલા શ્રી ઘનશ્યામ મહારાજ - મંગળા દર્શન" 
+             class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/20 pointer-events-none"></div>
+        <span class="absolute bottom-2 inset-x-2 text-center font-mono text-[10px] sm:text-[11px] text-turmeric font-bold bg-black/75 backdrop-blur-xs py-1 px-2 rounded-lg border border-turmeric/40">
+          લાડીલા શ્રી ઘનશ્યામ મહારાજ
+        </span>
+      </div>
+
+      <!-- Store Brand & Location -->
+      <h2 class="font-display font-extrabold text-xl sm:text-2xl text-paper mt-5 tracking-tight">
+        Ladila Shri Ghanshyam
+      </h2>
+      <p class="font-mono text-[10px] sm:text-xs text-turmeric tracking-wider uppercase mt-0.5 font-bold">
+        SUPER STORE &amp; DAILY KIRANA • DABHOLI
+      </p>
+      <p class="text-xs text-surface/75 mt-1.5 max-w-xs leading-relaxed">
+        શુભ દર્શન સહ દૈનિક કરિયાણા સ્ટોર પ્રવેશ...
+      </p>
+
+      <!-- Smooth Progress Indicator -->
+      <div class="w-48 sm:w-56 h-1.5 bg-white/15 rounded-full mt-5 overflow-hidden border border-white/10">
+        <div class="h-full bg-gradient-to-r from-turmeric via-saffron to-turmeric rounded-full sacred-progress-bar"></div>
+      </div>
+      <span class="font-mono text-[9px] text-surface/60 uppercase tracking-widest mt-2 font-semibold">
+        ENTERING STORE • PLEASE WAIT...
+      </span>
+
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       SHUTTER CURTAIN OVERLAY (FULL SCREEN PAGE-FLIP TRANSITION)
+       ======================================================================== -->
+  <div id="shutter-curtain" class="fixed inset-0 z-[100] pointer-events-none opacity-0 flex flex-col justify-between transition-opacity duration-200">
+    <div id="shutter-blade-top" class="shutter-blade w-full h-1/2 bg-ink border-b-4 border-turmeric -translate-y-full flex items-end justify-center pb-4">
+      <div class="text-center">
+        <span class="font-display font-extrabold text-2xl sm:text-3xl text-paper tracking-wider block">
+          LADILA SHRI GHANSHYAM
+        </span>
+        <span class="font-mono text-[10px] sm:text-xs text-turmeric uppercase tracking-widest block mt-0.5">
+          SUPER STORE &amp; DAILY KIRANA • DABHOLI
+        </span>
+      </div>
+    </div>
+    <div id="shutter-blade-bottom" class="shutter-blade w-full h-1/2 bg-ink border-t-4 border-saffron translate-y-full flex items-start justify-center pt-4">
+      <span class="font-mono text-[11px] text-surface/80 uppercase tracking-widest">
+        OPENING AISLE • PLEASE WAIT...
+      </span>
+    </div>
+  </div>
+
+  <!-- SITE ROOT CONTAINER (SLIDES IN FAST ON SPLASH DISMISSAL) -->
+  <div id="site-root-container" class="min-h-screen flex flex-col transition-all duration-500">
+
+  <!-- ========================================================================
+       TOP MARQUEE / SACRED STORE BAR
+       ======================================================================== -->
+  <div class="bg-ink text-surface py-1.5 px-4 text-xs font-mono border-b border-ink/40">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-bold text-paper">Dabholi Char Rasta Kirana Delivery:</span>
+        <span class="text-surface/85">Delivering to Bhoomidarshan, Kailash Nagar &amp; Singanpor</span>
+      </div>
+      <div class="flex items-center gap-4 text-[11px]">
+        <span>Daily 7:30 AM – 9:30 PM</span>
+        <a href="tel:+919876543210" class="text-turmeric hover:text-white font-bold transition">Store Call: 098765 43210</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       STICKY RISOGRAPH HEADER BAR (WITH SHOP NOW & MULTI-PAGE NAV)
+       ======================================================================== -->
+  <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur-md border-b-[1.5px] border-ink">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Stamp Logo -->
+      <a href="#home" class="nav-link flex items-center gap-3 min-w-0" data-page="home">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-saffron text-paper riso-box-sm flex items-center justify-center shrink-0 font-display font-extrabold text-xl sm:text-2xl">
+          G
+        </div>
+        <div class="min-w-0">
+          <span class="font-display font-extrabold text-sm sm:text-base text-ink block truncate leading-tight">
+            Ladila Shri Ghanshyam
+          </span>
+          <span class="font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-muted block truncate">
+            SUPER STORE &amp; KIRANA • DABHOLI
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Multi-Page Nav -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-bold text-ink">
+        <button type="button" class="nav-link text-saffron border-b-2 border-saffron pb-0.5 transition" data-page="home">Home</button>
+        <button type="button" class="nav-link text-muted hover:text-ink transition" data-page="catalogue">Catalogue (34)</button>
+        <button type="button" class="nav-link text-muted hover:text-ink transition" data-page="faqs">FAQs</button>
+        <button type="button" class="nav-link text-muted hover:text-ink transition" data-page="contact">Contact Us</button>
+      </nav>
+
+      <!-- Right Header Actions (SHOP NOW + WhatsApp) -->
+      <div class="flex items-center gap-2.5 shrink-0">
+        <button type="button" id="header-shop-now"
+                class="riso-box-sm riso-press inline-flex items-center gap-1.5 bg-saffron hover:bg-saffronDark text-paper font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl">
+          <span>SHOP NOW</span>
+          <span aria-hidden="true">↓</span>
+        </button>
+
+        <a id="header-wa-direct" href="https://wa.me/919876543210?text=Jay%20Shree%20Swaminarayan,%20I%20want%20to%20order%20groceries%20from%20Ladila%20Ghanshyam%20Super%20Store%20Dabholi." target="_blank"
+           class="hidden sm:inline-flex riso-box-sm riso-press items-center gap-1.5 bg-leaf hover:bg-leafDark text-white font-semibold text-xs sm:text-sm px-3.5 py-2.5 rounded-xl">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.847.882 2.791.882h.001c3.182 0 5.767-2.587 5.768-5.766 0-3.18-2.585-5.768-5.769-5.768zm7.421 5.767c0 4.092-3.329 7.42-7.421 7.42-1.282 0-2.484-.336-3.528-.925l-4.503 1.181 1.206-4.398c-.687-1.1-1.075-2.39-1.075-3.278 0-4.091 3.329-7.42 7.421-7.42 4.093 0 7.421 3.329 7.421 7.42z"/></svg>
+          <span class="hidden lg:inline">WhatsApp Order</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Sub-Navigation Bar -->
+    <div class="md:hidden flex items-center justify-around border-t border-ink/15 bg-surface/70 py-2 px-3 text-xs font-bold text-ink">
+      <button type="button" class="nav-link text-saffron" data-page="home">Home</button>
+      <button type="button" class="nav-link text-muted" data-page="catalogue">Catalogue</button>
+      <button type="button" class="nav-link text-muted" data-page="faqs">FAQs</button>
+      <button type="button" class="nav-link text-muted" data-page="contact">Contact</button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN CONTENT CONTAINER (PAGES SWITCHED BY SPA LOGIC)
+       ======================================================================== -->
+  <main class="flex-1">
+
+    <!-- ======================================================================
+         PAGE 1: HOME VIEW (#view-home)
+         ====================================================================== -->
+    <div id="view-home" class="page-view relative">
+      <!-- Ambient Sacred Watermark in background of homepage -->
+      <div class="pointer-events-none absolute top-6 right-6 w-80 h-[480px] opacity-[0.035] -z-10 bg-contain bg-no-repeat bg-right-top hidden xl:block" style="background-image: url('./assets/ghanshyam-maharaj.jpg');"></div>
+      
+      <!-- HERO SECTION: HERO BENTO (LEFT GHANSHYAM MAHARAJ + RIGHT QUICK KIRANA PAD) -->
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+
+          <!-- Left Bento (7 cols): Ladila Ghanshyam Maharaj Sacred Header -->
+          <div class="lg:col-span-7 riso-box rounded-3xl p-6 sm:p-9 relative overflow-hidden flex flex-col justify-between text-white min-h-[440px]">
+            
+            <!-- Sacred Background Photo of Ladila Ghanshyam Maharaj with Risograph Gradient -->
+            <div class="absolute inset-0 z-0 bg-cover bg-[center_top_8%] sm:bg-contain sm:bg-right sm:bg-no-repeat transition-all duration-300" style="background-image: url('./assets/ghanshyam-maharaj.jpg');">
+              <!-- Risograph Gradient: Left is deep ink for high typography contrast; Right is transparent so Maharaj's divine darshan & golden sinhasan are clearly visible -->
+              <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 via-45% to-ink/30 sm:bg-gradient-to-r sm:from-ink sm:via-ink/90 sm:via-55% sm:to-transparent"></div>
+            </div>
+
+            <div class="relative z-10">
+              <div class="flex flex-wrap items-center gap-2 mb-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-paper/95 border-[1.5px] border-ink font-mono text-[10px] sm:text-[11px] text-ink font-bold">
+                  ★ દર્શન: લાડીલા શ્રી ઘનશ્યામ મહારાજ • DABHOLI CHAR RASTA
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500 font-mono text-[10px] text-emerald-300">
+                  ● OPEN DAILY (7:30 AM–9:30 PM)
+                </span>
+              </div>
+
+              <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-paper leading-[1.12] tracking-tight">
+                Daily Fresh Chakki Atta, Pure Grains &amp; <span class="italic font-semibold text-turmeric">Monthly Kirana</span>.
+              </h1>
+
+              <p class="mt-4 text-sm sm:text-base text-surface/90 max-w-xl leading-relaxed">
+                Sortex-cleaned Sharbati wheat, aged kolam rice, branded Balaji snacks, pure Saurashtra singtel &amp; Bilona cow ghee delivered within 45 minutes to your society in Dabholi.
+              </p>
+
+              <!-- Hero Actions -->
+              <div class="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <button type="button" class="btn-shop-now riso-box-sm riso-press inline-flex items-center justify-center gap-2 bg-saffron hover:bg-saffronDark text-paper font-bold text-sm sm:text-base px-6 py-3.5 rounded-2xl shadow-md">
+                  <span>Browse Full Store (Shop Now)</span>
+                  <span aria-hidden="true">→</span>
+                </button>
+
+                <button type="button" id="hero-type-slip-btn"
+                        class="riso-box-sm riso-press inline-flex items-center justify-center gap-2 bg-paper hover:bg-surface text-ink font-bold text-sm sm:text-base px-5 py-3.5 rounded-2xl">
+                  <span>Type Monthly Kirana Slip 📝</span>
+                </button>
+              </div>
+
+              <div class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-ink/75 backdrop-blur-sm border border-white/25 font-mono text-[10px] text-turmeric font-bold mt-4">
+                <span>🌸</span>
+                <span>મંગળા દર્શન: લાડીલા શ્રી ઘનશ્યામ મહારાજ (સ્વામિનારાયણ સુરત)</span>
+              </div>
+            </div>
+
+            <!-- Rubber Stamp Badges -->
+            <div class="relative z-10 mt-8 pt-5 border-t border-white/20 grid grid-cols-3 gap-2 sm:gap-3 text-ink">
+              <div class="bg-paper/95 border-[1.5px] border-ink rounded-xl p-2.5 -rotate-1 flex items-center gap-2">
+                <span class="text-base">🌾</span>
+                <span class="font-mono text-[9px] sm:text-[10px] leading-tight uppercase font-bold">
+                  100% SORTEX GRAINS
+                </span>
+              </div>
+              <div class="bg-paper/95 border-[1.5px] border-ink rounded-xl p-2.5 rotate-1 flex items-center gap-2">
+                <span class="text-base">⚙️</span>
+                <span class="font-mono text-[9px] sm:text-[10px] leading-tight uppercase font-bold">
+                  DAILY 8:30 AM CHAKKI ATTA
+                </span>
+              </div>
+              <div class="bg-paper/95 border-[1.5px] border-ink rounded-xl p-2.5 -rotate-1 flex items-center gap-2">
+                <span class="text-base">🛵</span>
+                <span class="font-mono text-[9px] sm:text-[10px] leading-tight uppercase font-bold">
+                  FREE DABHOLI DELIVERY
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Bento (5 cols): Express Kirana Quick-Order Pad -->
+          <div class="lg:col-span-5 bg-card riso-box rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b border-ink/20">
+                <div class="flex items-center gap-2">
+                  <span class="text-lg">⚡</span>
+                  <h3 class="font-display font-extrabold text-lg text-ink">Express Kirana Pad</h3>
+                </div>
+                <span class="font-mono text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-surface border border-ink text-saffron">
+                  45-MIN DOORSTEP
+                </span>
+              </div>
+
+              <!-- Quick Search Input -->
+              <div class="mt-4">
+                <label for="home-quick-search" class="block font-mono text-[10px] uppercase text-muted mb-1 font-bold">
+                  SEARCH STORE STAPLES
+                </label>
+                <div class="relative">
+                  <input id="home-quick-search" type="text"
+                         placeholder="e.g. Sharbati Gehu, Singtel, Parle-G..."
+                         class="w-full rounded-xl bg-paper border-[1.5px] border-ink px-3.5 py-2.5 text-xs sm:text-sm text-ink focus:outline-none focus:border-saffron" />
+                  <button type="button" id="home-quick-search-btn" class="absolute right-2 top-2 bg-ink text-paper px-2.5 py-1 rounded-lg text-xs font-bold">
+                    Go →
+                  </button>
+                </div>
+              </div>
+
+              <!-- Quick List Input Box -->
+              <div class="mt-4">
+                <label for="home-kirana-text" class="block font-mono text-[10px] uppercase text-muted mb-1 font-bold">
+                  TYPE OR PASTE YOUR GROCERY LIST
+                </label>
+                <textarea id="home-kirana-text" rows="4"
+                  placeholder="e.g., 5kg Wheat Atta, 1L Groundnut Oil, 2 Vim Gel, 1kg Kolam Rice..."
+                  class="w-full rounded-xl bg-paper border-[1.5px] border-ink p-3 text-xs sm:text-sm text-ink focus:outline-none focus:border-saffron"></textarea>
+              </div>
+
+              <!-- Quick One-Tap Add Chips -->
+              <div class="mt-3">
+                <span class="font-mono text-[10px] uppercase text-muted block mb-1 font-bold">POPULAR STAPLES:</span>
+                <div class="flex flex-wrap gap-1.5">
+                  <button type="button" class="quick-add-chip bg-paper/90 border border-ink/40 hover:border-ink px-2 py-1 rounded-lg text-[11px] font-semibold text-ink" data-id="eg-wheat" data-widx="1">
+                    + 5kg Wheat (₹220)
+                  </button>
+                  <button type="button" class="quick-add-chip bg-paper/90 border border-ink/40 hover:border-ink px-2 py-1 rounded-lg text-[11px] font-semibold text-ink" data-id="ost-singtel-oil" data-widx="0">
+                    + 1L Singtel Oil (₹178)
+                  </button>
+                  <button type="button" class="quick-add-chip bg-paper/90 border border-ink/40 hover:border-ink px-2 py-1 rounded-lg text-[11px] font-semibold text-ink" data-id="ost-desi-ghee" data-widx="1">
+                    + 500ml Cow Ghee (₹345)
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom CTA for Quick Pad -->
+            <div class="mt-5 pt-3 border-t border-ink/20 flex items-center justify-between">
+              <span class="text-xs text-muted">📍 Dabholi Char Rasta</span>
+              <button type="button" id="home-submit-list-btn"
+                      class="riso-box-sm riso-press inline-flex items-center gap-1.5 bg-leaf text-white font-bold text-xs px-4 py-2.5 rounded-xl">
+                <span>Review Slip on WhatsApp →</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- LIVE CHAKKI ATTA MILLING & DAILY KIRANA DISPATCH STRIP -->
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 py-4">
+        <div class="bg-surface riso-box rounded-3xl p-5 sm:p-6">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
+                <span class="font-mono text-xs uppercase tracking-widest text-saffron font-bold">DAILY STORE OPERATIONS</span>
+              </div>
+              <h2 class="font-display font-extrabold text-xl sm:text-2xl text-ink mt-0.5">
+                Fresh Chakki Milling &amp; Society Delivery Runs
+              </h2>
+            </div>
+            <span class="font-mono text-xs bg-paper border border-ink px-3 py-1.5 rounded-xl font-bold">
+              100% UNPOLISHED • SORTEX CLEANED
+            </span>
+          </div>
+
+          <!-- 3 Daily Operational Runs -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 mt-5">
+            <div class="bg-paper p-4 rounded-2xl border border-ink/30">
+              <div class="flex items-center justify-between text-xs font-mono font-bold text-saffron">
+                <span>08:30 AM RUN</span>
+                <span class="text-emerald-700">● COMPLETED</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-ink mt-1">Chakki Fresh Wheat Atta</h3>
+              <p class="text-xs text-muted mt-0.5">Stone-milled MP Sharbati whole wheat with natural bran.</p>
+            </div>
+
+            <div class="bg-paper p-4 rounded-2xl border border-ink/30">
+              <div class="flex items-center justify-between text-xs font-mono font-bold text-saffron">
+                <span>11:30 AM RUN</span>
+                <span class="text-emerald-700">● PACKED</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-ink mt-1">Bhoomidarshan &amp; Kailash Society</h3>
+              <p class="text-xs text-muted mt-0.5">Morning orders delivered to doorstep in 45 minutes.</p>
+            </div>
+
+            <div class="bg-paper p-4 rounded-2xl border border-ink/30">
+              <div class="flex items-center justify-between text-xs font-mono font-bold text-saffron">
+                <span>05:30 PM RUN</span>
+                <span class="text-saffron">● ACTIVE BOOKING</span>
+              </div>
+              <h3 class="font-display font-bold text-base text-ink mt-1">Evening Kirana Dispatch</h3>
+              <p class="text-xs text-muted mt-0.5">Ved Road, Singanpor &amp; Dabholi dinner essentials.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 FEATURED AISLES SHOWCASE -->
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+        <div class="flex items-end justify-between mb-6">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-saffron font-bold">EXPLORE OUR 4 STORE AISLES</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-ink mt-0.5">Everything Under One Roof</h2>
+          </div>
+          <button type="button" class="btn-shop-now text-xs sm:text-sm font-bold text-saffron hover:underline">
+            View All 34 Items →
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Aisle 1 -->
+          <div class="bg-card riso-box rounded-2xl p-5 flex flex-col justify-between hover:bg-surface transition cursor-pointer aisle-card" data-cat="Essential Groceries">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-turmeric/20 text-turmeric font-bold flex items-center justify-center text-xl mb-3 border border-ink/20">🌾</div>
+              <h3 class="font-display font-bold text-lg text-ink">Essential Groceries</h3>
+              <p class="text-xs text-muted mt-1">Wheat, rice, maize, moong, maida, fresh chakki atta, pulses, barley &amp; ragi.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-ink/15 flex items-center justify-between text-xs font-bold text-saffron">
+              <span>9 Items</span>
+              <span>Open Aisle →</span>
+            </div>
+          </div>
+
+          <!-- Aisle 2 -->
+          <div class="bg-card riso-box rounded-2xl p-5 flex flex-col justify-between hover:bg-surface transition cursor-pointer aisle-card" data-cat="Snacks & Biscuits">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-saffron/20 text-saffron font-bold flex items-center justify-center text-xl mb-3 border border-ink/20">🥨</div>
+              <h3 class="font-display font-bold text-lg text-ink">Snacks &amp; Biscuits</h3>
+              <p class="text-xs text-muted mt-1">Balaji Ratlami &amp; Aloo Sev, Parle-G, Oreo, Good Day, Biscoff, Jim Jam, Krackjack.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-ink/15 flex items-center justify-between text-xs font-bold text-saffron">
+              <span>9 Items</span>
+              <span>Open Aisle →</span>
+            </div>
+          </div>
+
+          <!-- Aisle 3 -->
+          <div class="bg-card riso-box rounded-2xl p-5 flex flex-col justify-between hover:bg-surface transition cursor-pointer aisle-card" data-cat="Oils, Spices & Tea">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-saffronDark/20 text-saffronDark font-bold flex items-center justify-center text-xl mb-3 border border-ink/20">🫒</div>
+              <h3 class="font-display font-bold text-lg text-ink">Oils, Spices &amp; Tea</h3>
+              <p class="text-xs text-muted mt-1">Pure Singtel oil, Cow ghee, Haldi, Kashmiri Mirch, Garam Masala, Wagh Bakri chai.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-ink/15 flex items-center justify-between text-xs font-bold text-saffron">
+              <span>8 Items</span>
+              <span>Open Aisle →</span>
+            </div>
+          </div>
+
+          <!-- Aisle 4 -->
+          <div class="bg-card riso-box rounded-2xl p-5 flex flex-col justify-between hover:bg-surface transition cursor-pointer aisle-card" data-cat="Household & Care">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-leaf/20 text-leaf font-bold flex items-center justify-center text-xl mb-3 border border-ink/20">🧼</div>
+              <h3 class="font-display font-bold text-lg text-ink">Household &amp; Care</h3>
+              <p class="text-xs text-muted mt-1">Surf Excel, Vim gel, Medimix soap, Colgate &amp; Dant Kanti, Lizol, Agarbatti, Garbage bags.</p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-ink/15 flex items-center justify-between text-xs font-bold text-saffron">
+              <span>8 Items</span>
+              <span>Open Aisle →</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================================
+         PAGE 2: CATALOGUE VIEW (#view-catalogue)
+         ====================================================================== -->
+    <div id="view-catalogue" class="page-view hidden">
+      <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 pb-16">
+        
+        <!-- Catalogue Header -->
+        <div class="bg-surface riso-box rounded-3xl p-6 sm:p-8 mb-6">
+          <span class="font-mono text-xs uppercase tracking-widest text-saffron font-bold">STORE DIRECTORY • ALL 34 ITEMS</span>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-ink mt-1">Complete Supermart Catalogue</h2>
+          <p class="text-xs sm:text-sm text-muted mt-1 max-w-2xl">
+            Select pack weights and add items directly to your slip. When done, tap the floating basket or receipt drawer to send your order on WhatsApp.
+          </p>
+
+          <!-- Aisle Filter Tabs -->
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-5" role="tablist">
+            <button type="button" data-cat="All" class="cat-filter-btn riso-box-sm shrink-0 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-ink text-paper">
+              All Items (34)
+            </button>
+            <button type="button" data-cat="Essential Groceries" class="cat-filter-btn riso-box-sm shrink-0 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-paper text-ink hover:bg-card">
+              🌾 Essential Groceries (9)
+            </button>
+            <button type="button" data-cat="Snacks & Biscuits" class="cat-filter-btn riso-box-sm shrink-0 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-paper text-ink hover:bg-card">
+              🥨 Snacks &amp; Biscuits (9)
+            </button>
+            <button type="button" data-cat="Oils, Spices & Tea" class="cat-filter-btn riso-box-sm shrink-0 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-paper text-ink hover:bg-card">
+              🫒 Oils, Spices &amp; Tea (8)
+            </button>
+            <button type="button" data-cat="Household & Care" class="cat-filter-btn riso-box-sm shrink-0 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-paper text-ink hover:bg-card">
+              🧼 Household &amp; Care (8)
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Container for Aisles / Bento Cards -->
+        <div id="product-bento-grid" class="space-y-10"></div>
+      </section>
+    </div>
+
+    <!-- ======================================================================
+         PAGE 3: FAQS VIEW (#view-faqs)
+         ====================================================================== -->
+    <div id="view-faqs" class="page-view hidden">
+      <section class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div class="text-center max-w-xl mx-auto mb-10">
+          <span class="font-mono text-xs uppercase tracking-widest text-saffron font-bold">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-1">Dabholi Store Help &amp; Policies</h2>
+          <p class="text-xs sm:text-sm text-muted mt-2">Everything you need to know about our daily ordering, delivery radius &amp; quality guarantees.</p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="bg-card riso-box rounded-2xl p-6">
+            <h3 class="font-display font-bold text-lg text-ink flex items-center gap-2">
+              <span class="text-saffron">Q.</span> Which societies in Dabholi do you deliver to?
+            </h3>
+            <p class="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
+              We deliver daily to <strong>Bhoomidarshan Society, Kailash Nagar Society, Shiv Nagar, Singanpor Road, Ved Road</strong>, and all neighboring residential complexes near Dabholi Char Rasta within a 2.5 km radius.
+            </p>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-card riso-box rounded-2xl p-6">
+            <h3 class="font-display font-bold text-lg text-ink flex items-center gap-2">
+              <span class="text-saffron">Q.</span> What is the minimum order for free doorstep delivery?
+            </h3>
+            <p class="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
+              Delivery is <strong>100% FREE for all orders above ₹300</strong>. For orders under ₹300, a nominal delivery fee of ₹20 applies. You can also opt for our free <strong>15-Minute Store Counter Pickup</strong> if you are walking past Dabholi Char Rasta.
+            </p>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-card riso-box rounded-2xl p-6">
+            <h3 class="font-display font-bold text-lg text-ink flex items-center gap-2">
+              <span class="text-saffron">Q.</span> How do I make the payment?
+            </h3>
+            <p class="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
+              You pay only after receiving your items! We accept <strong>UPI on Delivery</strong> (Google Pay, PhonePe, Paytm, BHIM) via the delivery partner's QR code, or direct <strong>Cash on Delivery (COD)</strong>.
+            </p>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-card riso-box rounded-2xl p-6">
+            <h3 class="font-display font-bold text-lg text-ink flex items-center gap-2">
+              <span class="text-saffron">Q.</span> Can I type custom items not listed on the website?
+            </h3>
+            <p class="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
+              Yes! Use the <strong>"Custom Monthly Kirana List"</strong> box inside the receipt drawer. You can type or paste items in English or Gujarati (e.g., <em>"5kg Sharbati Gehu, 1L Gulab Singtel, 2 Dettol Soap"</em>), and our shop team will bill and pack them together.
+            </p>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="bg-card riso-box rounded-2xl p-6">
+            <h3 class="font-display font-bold text-lg text-ink flex items-center gap-2">
+              <span class="text-saffron">Q.</span> What is your policy on unsealed or damaged products?
+            </h3>
+            <p class="text-xs sm:text-sm text-muted mt-2 leading-relaxed">
+              We stand by 100% customer trust. If any packet is damaged or unsatisfactory, simply inform the delivery partner or message us on WhatsApp for an <strong>instant on-the-spot replacement or full refund</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 text-center">
+          <p class="text-xs text-muted">Have a specific question not listed here?</p>
+          <a href="https://wa.me/919876543210" target="_blank" class="text-saffron font-bold text-sm hover:underline mt-1 inline-block">
+            Chat directly with our Dabholi Store on WhatsApp →
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ======================================================================
+         PAGE 4: CONTACT US VIEW (#view-contact)
+         ====================================================================== -->
+    <div id="view-contact" class="page-view hidden">
+      <section class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div class="text-center max-w-xl mx-auto mb-10">
+          <span class="font-mono text-xs uppercase tracking-widest text-saffron font-bold">REACH OUR STORE</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-1">Visit or Call Us in Dabholi</h2>
+          <p class="text-xs sm:text-sm text-muted mt-2">Located at Dabholi Char Rasta, opposite Bhoomidarshan Society.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+          
+          <!-- Store Info Card (7 cols) -->
+          <div class="md:col-span-7 bg-card riso-box rounded-3xl p-6 sm:p-8 space-y-5">
+            <div class="flex items-start gap-3">
+              <div class="w-10 h-10 rounded-xl bg-saffron/20 text-saffron font-bold flex items-center justify-center shrink-0 text-xl border border-ink/20">📍</div>
+              <div>
+                <strong class="font-display text-lg text-ink block">Physical Store Address:</strong>
+                <p class="text-xs sm:text-sm text-muted mt-1 leading-relaxed">
+                  Ladila Shri Ghanshyam Super Store &amp; Kirana<br>
+                  Near Shree Sahajanand Chowk, Dabholi Char Rasta,<br>
+                  Opposite Bhoomidarshan Society Gate, Ved Road,<br>
+                  Surat, Gujarat - 395004.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 pt-3 border-t border-ink/15">
+              <div class="w-10 h-10 rounded-xl bg-turmeric/20 text-turmeric font-bold flex items-center justify-center shrink-0 text-xl border border-ink/20">⏰</div>
+              <div>
+                <strong class="font-display text-lg text-ink block">Opening Hours:</strong>
+                <p class="text-xs sm:text-sm text-muted mt-1">
+                  Monday to Sunday: <strong>7:30 AM – 9:30 PM</strong><br>
+                  (Open on all public holidays &amp; festivals)
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 pt-3 border-t border-ink/15">
+              <div class="w-10 h-10 rounded-xl bg-leaf/20 text-leaf font-bold flex items-center justify-center shrink-0 text-xl border border-ink/20">📞</div>
+              <div>
+                <strong class="font-display text-lg text-ink block">Direct Store Contact:</strong>
+                <p class="text-xs sm:text-sm text-muted mt-1">
+                  Phone: <a href="tel:+919876543210" class="text-ink font-bold hover:underline">+91 98765 43210</a><br>
+                  WhatsApp: <a href="https://wa.me/919876543210" target="_blank" class="text-leaf font-bold hover:underline">+91 98765 43210</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="pt-4 flex flex-wrap gap-3">
+              <a href="https://wa.me/919876543210?text=Jay%20Shree%20Swaminarayan,%20I%20have%20an%20inquiry%20regarding%20grocery%20delivery." 
+                 target="_blank"
+                 class="riso-box-sm riso-press inline-flex items-center gap-2 bg-leaf text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl">
+                <span>Message on WhatsApp</span>
+                <span>↗</span>
+              </a>
+
+              <a href="https://maps.google.com/?q=Dabholi+Char+Rasta+Surat" 
+                 target="_blank"
+                 class="riso-box-sm riso-press inline-flex items-center gap-2 bg-paper text-ink font-bold text-xs sm:text-sm px-5 py-3 rounded-xl border border-ink">
+                <span>Open in Google Maps</span>
+                <span>📍</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Society Coverage Card (5 cols) -->
+          <div class="md:col-span-5 bg-surface riso-box rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-wider text-saffron font-bold">DOORSTEP RUNS</span>
+              <h3 class="font-display font-extrabold text-xl text-ink mt-1">Societies We Serve</h3>
+              <p class="text-xs text-muted mt-1 leading-relaxed">
+                Our delivery boys make scheduled 45-minute runs across these societies:
+              </p>
+
+              <ul class="mt-4 space-y-2 text-xs font-semibold text-ink">
+                <li class="flex items-center gap-2">
+                  <span class="text-leaf">✔</span> Bhoomidarshan Society (Gates 1 &amp; 2)
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-leaf">✔</span> Kailash Nagar Society
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-leaf">✔</span> Shiv Nagar &amp; Radhe Krishna Society
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-leaf">✔</span> Singanpor Road Residential Complex
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-leaf">✔</span> Ved Road Swaminarayan Chowk Area
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-ink/20 bg-paper p-3.5 rounded-xl border border-ink/30">
+              <span class="font-mono text-[10px] text-muted block uppercase">NOT IN LIST?</span>
+              <p class="text-xs text-ink font-bold mt-0.5">We deliver anywhere within 2.5 km of Dabholi Char Rasta!</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ========================================================================
+       RICH 4-COLUMN STORE FOOTER
+       ======================================================================== -->
+  <footer class="bg-ink text-surface pt-12 pb-24 sm:pb-12 border-t-2 border-ink">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-surface/20">
+        
+        <!-- Col 1: Store Brand -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-saffron text-paper font-display font-extrabold flex items-center justify-center text-lg">G</div>
+            <span class="font-display font-extrabold text-base text-paper">Ladila Shri Ghanshyam</span>
+          </div>
+          <p class="text-xs text-surface/80 leading-relaxed">
+            Authentic neighborhood kirana store at Dabholi Char Rasta, Surat. Serving fresh sortex grains, chakki atta, branded snacks and daily family provisions with pride.
+          </p>
+          <div class="text-[11px] font-mono text-turmeric font-bold">
+            ★ BLESSED AT DABHOLI SURAT
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="space-y-2.5">
+          <span class="font-mono text-xs uppercase tracking-widest text-turmeric font-bold block mb-2">QUICK NAVIGATION</span>
+          <ul class="space-y-1.5 text-xs text-surface/85">
+            <li><button type="button" class="nav-link hover:text-white transition" data-page="home">Home Page</button></li>
+            <li><button type="button" class="nav-link hover:text-white transition" data-page="catalogue">Complete Catalogue (34 Items)</button></li>
+            <li><button type="button" class="nav-link hover:text-white transition" data-page="faqs">Store FAQs &amp; Help</button></li>
+            <li><button type="button" class="nav-link hover:text-white transition" data-page="contact">Contact &amp; Directions</button></li>
+            <li><button type="button" id="footer-open-slip" class="text-saffron hover:underline font-bold">Open Kirana Order Slip →</button></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Delivery Societies -->
+        <div class="space-y-2.5">
+          <span class="font-mono text-xs uppercase tracking-widest text-turmeric font-bold block mb-2">SOCIETY DELIVERY</span>
+          <ul class="space-y-1.5 text-xs text-surface/80">
+            <li>• Bhoomidarshan Society</li>
+            <li>• Kailash Nagar Society</li>
+            <li>• Singanpor Road</li>
+            <li>• Ved Road Chowk</li>
+            <li>• Dabholi Char Rasta (2.5 km Radius)</li>
+          </ul>
+          <span class="text-[11px] font-mono text-leaf block font-bold">● FREE DELIVERY ABOVE ₹300</span>
+        </div>
+
+        <!-- Col 4: Timings & Contact -->
+        <div class="space-y-2.5">
+          <span class="font-mono text-xs uppercase tracking-widest text-turmeric font-bold block mb-2">STORE DETAILS</span>
+          <p class="text-xs text-surface/85 leading-relaxed">
+            Near Shree Sahajanand Chowk, Dabholi Char Rasta, Surat.<br>
+            Daily: <strong>7:30 AM – 9:30 PM</strong>
+          </p>
+          <div class="pt-1 text-xs">
+            <span class="text-surface/60 block">Direct Order Hotline:</span>
+            <a href="tel:+919876543210" class="text-paper font-bold hover:underline">+91 98765 43210</a>
+          </div>
+          <div class="text-[11px] text-surface/70">
+            Payment: Cash on Delivery &amp; UPI
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-surface/60 font-mono">
+        <div>
+          © 2026 LADILA SHRI GHANSHYAM SUPER STORE &amp; KIRANA. ALL RIGHTS RESERVED.
+        </div>
+        <div>
+          DABHOLI CHAR RASTA, SURAT • CRAFTED WITH RISOGRAPH DESIGN SYSTEM
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  </div><!-- /#site-root-container -->
+
+  <!-- ========================================================================
+       FLOATING WHATSAPP BASKET DOCK (ALWAYS ACCESSIBLE)
+       ======================================================================== -->
+  <div class="fixed bottom-4 inset-x-0 z-40 px-4 pointer-events-none flex justify-center">
+    <button type="button" id="liquid-basket-dock"
+            class="pointer-events-auto riso-box bg-ink text-paper rounded-full px-5 py-3 flex items-center justify-between gap-3 max-w-md w-auto shadow-xl">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <span id="dock-count-badge" class="w-7 h-7 rounded-full bg-saffron text-paper font-mono text-xs font-bold flex items-center justify-center shrink-0">
+          0
+        </span>
+        <div class="text-left min-w-0">
+          <span id="dock-primary-text" class="font-display font-bold text-sm sm:text-base block truncate leading-tight">
+            Supermart Grocery Cart
+          </span>
+          <span id="dock-sub-text" class="font-mono text-[10px] text-surface/85 block truncate">
+            TAP ITEMS OR TYPE KIRANA LIST
+          </span>
+        </div>
+      </div>
+
+      <span id="dock-action-pill" class="shrink-0 px-3.5 py-1.5 rounded-full bg-leaf text-white font-bold text-xs">
+        Open Slip →
+      </span>
+    </button>
+  </div>
+
+  <!-- ========================================================================
+       SERRATED KIRANA RECEIPT SLIDE-UP DRAWER
+       ======================================================================== -->
+  <div id="receipt-drawer-backdrop"
+       class="fixed inset-0 z-50 hidden items-end sm:items-center justify-center bg-ink/60 backdrop-blur-xs p-0 sm:p-4"
+       role="dialog" aria-modal="true" aria-labelledby="receipt-drawer-title">
+
+    <div id="receipt-drawer-panel"
+         class="receipt-serrated-top bg-paper border-x-[1.5px] border-b-[1.5px] sm:border-t-[1.5px] border-ink w-full max-w-lg sm:rounded-b-3xl p-5 sm:p-6 max-h-[90vh] flex flex-col shadow-2xl">
+
+      <!-- Receipt Header -->
+      <div class="flex items-start justify-between gap-3 pb-3 border-b-[1.5px] border-dashed border-ink/40">
+        <div>
+          <div class="flex flex-wrap items-center gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-widest text-saffron font-bold">
+              GHANSHYAM DIGITAL KIRANA SLIP
+            </span>
+            <span class="px-2 py-0.5 rounded bg-surface border border-ink font-mono text-[10px] font-bold text-ink">
+              DABHOLI CHAR RASTA
+            </span>
+          </div>
+          <h3 id="receipt-drawer-title" class="font-display font-extrabold text-xl text-ink mt-0.5">
+            Your WhatsApp Order Slip
+          </h3>
+        </div>
+        <button type="button" id="close-receipt-drawer-btn" aria-label="Close receipt drawer"
+                class="riso-box-sm w-9 h-9 rounded-xl bg-surface text-ink font-bold flex items-center justify-center">
+          ✕
+        </button>
+      </div>
+
+      <!-- Scrollable Order Contents -->
+      <div class="py-3 overflow-y-auto space-y-3 flex-1">
+        <div id="receipt-items-list" class="space-y-2"></div>
+
+        <!-- Custom Kirana List Box -->
+        <div class="bg-surface border-[1.5px] border-ink rounded-2xl p-3.5">
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="font-mono text-[11px] font-bold uppercase text-ink">
+              + Custom Monthly Kirana Items
+            </span>
+            <span class="font-mono text-[10px] text-muted">OPTIONAL</span>
+          </div>
+          <textarea id="receipt-kirana-mirror" rows="3"
+            placeholder="Type extra kirana items here (e.g. 5kg Wheat, 1L Oil)..."
+            class="w-full rounded-xl bg-paper border border-ink/40 px-3 py-2 text-xs sm:text-sm text-ink focus:outline-none focus:border-saffron"></textarea>
+        </div>
+      </div>
+
+      <!-- Form & WhatsApp Submit -->
+      <form id="receipt-submit-form" class="pt-3 border-t-[1.5px] border-dashed border-ink/40 space-y-3">
+        <div class="flex items-center justify-between bg-card border-[1.5px] border-ink px-4 py-2.5 rounded-xl">
+          <span class="font-mono text-xs uppercase text-ink font-bold">CATALOGUE ESTIMATE</span>
+          <span id="receipt-subtotal-display" class="font-display font-extrabold text-lg text-saffron">₹0</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div>
+            <label for="receipt-society-select" class="block font-mono text-[10px] uppercase text-ink mb-1 font-bold">
+              Select Dabholi Society *
+            </label>
+            <select id="receipt-society-select"
+                    class="w-full rounded-xl bg-surface border-[1.5px] border-ink px-3 py-2.5 text-xs sm:text-sm font-semibold text-ink focus:outline-none focus:border-saffron">
+            </select>
+          </div>
+
+          <div>
+            <label for="receipt-flat-input" class="block font-mono text-[10px] uppercase text-ink mb-1 font-bold">
+              Flat / House No. *
+            </label>
+            <input id="receipt-flat-input" type="text" required
+                   placeholder="e.g., B-104 / Plot 12"
+                   class="w-full rounded-xl bg-surface border-[1.5px] border-ink px-3 py-2.5 text-xs sm:text-sm text-ink focus:outline-none focus:border-saffron" />
+          </div>
+        </div>
+
+        <div id="custom-society-wrapper" class="hidden">
+          <label for="receipt-custom-society" class="block font-mono text-[10px] uppercase text-ink mb-1 font-bold">
+            Enter Custom Society / Landmark *
+          </label>
+          <input id="receipt-custom-society" type="text"
+                 placeholder="e.g., Shubham Residency, Ved Road"
+                 class="w-full rounded-xl bg-surface border-[1.5px] border-ink px-3 py-2 text-xs sm:text-sm text-ink focus:outline-none focus:border-saffron" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-2" role="group" aria-label="Fulfillment mode">
+          <button type="button" data-fulfill="Doorstep Home Delivery" aria-pressed="true"
+                  class="fulfill-toggle-btn riso-box-sm py-2.5 px-3 rounded-xl text-xs font-bold bg-ink text-paper">
+            🛵 Doorstep Delivery
+          </button>
+          <button type="button" data-fulfill="15-Min Store Counter Pickup" aria-pressed="false"
+                  class="fulfill-toggle-btn riso-box-sm py-2.5 px-3 rounded-xl text-xs font-bold bg-surface text-ink">
+            🛍️ 15-Min Pickup
+          </button>
+        </div>
+
+        <button type="submit"
+                class="riso-box-sm riso-press w-full bg-leaf hover:bg-leafDark text-white font-bold text-sm sm:text-base py-3.5 rounded-xl flex items-center justify-center gap-2">
+          <span>Send Order on WhatsApp</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC & STATE ENGINE -->
+  <script>
+    const SITE_CONFIG = {
+      storeName: "Ladila Shri Ghanshyam Super Store & Kirana",
+      shortName: "Ladila Shri Ghanshyam",
+      phone: "+919876543210",
+      city: "Surat",
+      address: "Near Shree Sahajanand Chowk, Dabholi Char Rasta, Surat",
+      deliverySocieties: [
+        "Bhoomidarshan Society",
+        "Kailash Nagar Society",
+        "Shiv Nagar Society",
+        "Singanpor Road",
+        "Ved Road Swaminarayan Area",
+        "Custom Society (Enter Below)"
+      ],
+      catalog: [
+        // ====================================================================
+        // SECTION 1: ESSENTIAL GROCERIES (9 ITEMS — BATCH COUNTER STAPLES)
+        // ====================================================================
+        {
+          id: "eg-wheat",
+          name: "MP Sehore Sharbati Whole Wheat (Gehu)",
+          category: "Essential Groceries",
+          badge: "SORTEX CLEANED",
+          description: "Golden heavy-grain Sharbati wheat stored in clean dry containers for daily rotli & bhakhri.",
+          image: "./assets/products/wheat.jpg",
+          weights: [
+            { label: "1kg", price: 46 },
+            { label: "5kg", price: 220 },
+            { label: "10kg", price: 430 }
+          ]
+        },
+        {
+          id: "eg-rice",
+          name: "Aged Gujarat Kolam & Basmati Rice",
+          category: "Essential Groceries",
+          badge: "AGED 12 MO",
+          description: "Aromatic daily steam kolam & long-grain basmati rice stored in airtight grain drums.",
+          image: "./assets/products/rice.jpg",
+          weights: [
+            { label: "1kg", price: 68 },
+            { label: "5kg", price: 325 },
+            { label: "10kg", price: 635 }
+          ]
+        },
+        {
+          id: "eg-maize",
+          name: "Desi Yellow Maize Whole & Makai Daliya",
+          category: "Essential Groceries",
+          badge: "FARM HARVEST",
+          description: "Sun-dried Kathiyawadi yellow corn kernels in containers for winter rotla, dhokla & soup.",
+          image: "./assets/products/maize.jpg",
+          weights: [
+            { label: "1kg", price: 42 },
+            { label: "2kg", price: 80 },
+            { label: "5kg", price: 195 }
+          ]
+        },
+        {
+          id: "eg-moong",
+          name: "Whole Green Moong & Yellow Moong Dal",
+          category: "Essential Groceries",
+          badge: "HIGH PROTEIN",
+          description: "Unpolished Kathiyawadi whole green moong & quick-cooking split yellow moong in counter bins.",
+          image: "./assets/products/moong.jpg",
+          weights: [
+            { label: "500g", price: 68 },
+            { label: "1kg", price: 132 },
+            { label: "2kg", price: 258 }
+          ]
+        },
+        {
+          id: "eg-refined-flour",
+          name: "Superfine Baker's Refined Flour (Maida)",
+          category: "Essential Groceries",
+          badge: "TRIPLE SIFTED",
+          description: "Silky lump-free refined white flour (maida) in stainless containers for samosa patti & baking.",
+          image: "./assets/products/refined-flour.jpg",
+          weights: [
+            { label: "500g", price: 24 },
+            { label: "1kg", price: 45 },
+            { label: "5kg", price: 215 }
+          ]
+        },
+        {
+          id: "eg-flour-atta",
+          name: "Fresh Stone-Ground Chakki Wheat Flour (Atta)",
+          category: "Essential Groceries",
+          badge: "CHAKKI FRESH",
+          description: "100% whole wheat chakki atta with natural bran—milled fresh every morning at Dabholi.",
+          image: "./assets/products/flour-atta.jpg",
+          weights: [
+            { label: "1kg", price: 48 },
+            { label: "5kg", price: 230 },
+            { label: "10kg", price: 450 }
+          ]
+        },
+        {
+          id: "eg-pulses",
+          name: "Unpolished Toor, Chana & Urad Pulses (Dal)",
+          category: "Essential Groceries",
+          badge: "DAILY DAL",
+          description: "Farm-direct Gujarat toor dal, desi chana dal & split urad in traditional grocery display jars.",
+          image: "./assets/products/pulses.jpg",
+          weights: [
+            { label: "500g", price: 82 },
+            { label: "1kg", price: 160 },
+            { label: "5kg", price: 780 }
+          ]
+        },
+        {
+          id: "eg-barley",
+          name: "Cleaned Whole Barley Grains (Jau)",
+          category: "Essential Groceries",
+          badge: "COOLING FIBRE",
+          description: "Nutritious whole barley grains in bulk counter containers for jau water & multigrain rotli.",
+          image: "./assets/products/barley.jpg",
+          weights: [
+            { label: "500g", price: 38 },
+            { label: "1kg", price: 72 },
+            { label: "2kg", price: 140 }
+          ]
+        },
+        {
+          id: "eg-ragi",
+          name: "Organic Finger Millet Grain & Flour (Ragi / Nachni)",
+          category: "Essential Groceries",
+          badge: "CALCIUM RICH",
+          description: "Natural calcium-dense red ragi grains & stone-milled flour in rustic wooden containers.",
+          image: "./assets/products/ragi.jpg",
+          weights: [
+            { label: "500g", price: 36 },
+            { label: "1kg", price: 68 },
+            { label: "2kg", price: 130 }
+          ]
+        },
+
+        // ====================================================================
+        // SECTION 2: SNACKS & BISCUITS (9 ITEMS — BALAJI SEV + TOP BISCUITS)
+        // ====================================================================
+        {
+          id: "sb-balaji-ratlami",
+          name: "Balaji Wafers Ratlami Sev",
+          category: "Snacks & Biscuits",
+          badge: "SEALED PACK",
+          description: "Authentic spicy clove & ajwain Ratlami besan sev in sealed Balaji freshness pouch.",
+          image: "./assets/products/balaji-ratlami.jpg",
+          containImage: true,
+          weights: [
+            { label: "₹10 Pack (50g)", price: 10 },
+            { label: "200g Pack", price: 40 },
+            { label: "400g Family", price: 80 }
+          ]
+        },
+        {
+          id: "sb-balaji-aloo-sev",
+          name: "Balaji Wafers Aloo Sev",
+          category: "Snacks & Biscuits",
+          badge: "BESTSELLER",
+          description: "Crispy potato & chickpea sev lightly seasoned with pudina & black pepper.",
+          image: "./assets/products/balaji-aloo-sev.jpg",
+          containImage: true,
+          weights: [
+            { label: "₹10 Pack (45g)", price: 10 },
+            { label: "200g Pack", price: 40 },
+            { label: "400g Family", price: 80 }
+          ]
+        },
+        {
+          id: "sb-lotus-biscoff",
+          name: "Lotus Biscoff Caramelized Biscuits",
+          category: "Snacks & Biscuits",
+          badge: "IMPORTED TREAT",
+          description: "Crunchy Belgian caramelized biscuits—perfect alongside evening filter coffee or chai.",
+          image: "./assets/products/lotus-biscoff.jpg",
+          containImage: true,
+          weights: [
+            { label: "Mini Pack", price: 45 },
+            { label: "125g Pack", price: 145 },
+            { label: "250g Big Pack", price: 275 }
+          ]
+        },
+        {
+          id: "sb-marie-gold",
+          name: "Britannia Marie Gold Biscuits",
+          category: "Snacks & Biscuits",
+          badge: "CHAI PARTNER",
+          description: "Light, crisp zero-trans-fat wheat biscuits enriched with 10 essential vitamins & minerals.",
+          image: "./assets/products/marie-gold.jpg",
+          containImage: true,
+          weights: [
+            { label: "₹10 Small Pack", price: 10 },
+            { label: "250g Big Pack", price: 38 },
+            { label: "950g Super Saver", price: 135 }
+          ]
+        },
+        {
+          id: "sb-parle-g",
+          name: "Parle-G Original Gluco Biscuits",
+          category: "Snacks & Biscuits",
+          badge: "INDIA'S FAVOURITE",
+          description: "Classic glucose milk-and-wheat biscuits loved across every Dabholi household.",
+          image: "./assets/products/parle-g.jpg",
+          containImage: true,
+          weights: [
+            { label: "₹10 Pack (100g)", price: 10 },
+            { label: "250g Pack", price: 28 },
+            { label: "800g Family Pack", price: 85 }
+          ]
+        },
+        {
+          id: "sb-good-day",
+          name: "Britannia Good Day Cashew Cookies",
+          category: "Snacks & Biscuits",
+          badge: "RICH COOKIES",
+          description: "Rich buttery golden cookies loaded with crunchy cashew bits for guests & tea time.",
+          image: "./assets/products/good-day.jpg",
+          containImage: true,
+          weights: [
+            { label: "₹10 Small Pack", price: 10 },
+            { label: "200g Big Pack", price: 42 },
+            { label: "600g Mega Pack", price: 115 }
+          ]
+        },
+        {
+          id: "sb-oreo",
+          name: "Cadbury Oreo Vanilla Creme Sandwich Biscuits",
+          category: "Snacks & Biscuits",
+          badge: "KIDS PICK",
+          description: "Crunchy dark cocoa wafers filled with smooth vanilla creme—twist, lick & dunk.",
+          image: "./assets/products/oreo.jpg",
+          containImage: true,
+          weights: [
+            { label: "₹10 Small Pack", price: 10 },
+            { label: "120g Regular Pack", price: 35 },
+            { label: "288g Jumbo Pack", price: 80 }
+          ]
+        },
+        {
+          id: "sb-jim-jam",
+          name: "Britannia Treat Jim Jam Cream Biscuits",
+          category: "Snacks & Biscuits",
+          badge: "JAM + CREME",
+          description: "Crispy sugar-sprinkled biscuits sandwiched with vanilla creme & fruity jam center.",
+          image: "./assets/products/jim-jam.jpg",
+          containImage: true,
+          weights: [
+            { label: "₹10 Small Pack", price: 10 },
+            { label: "138g Big Pack", price: 35 },
+            { label: "Pack of 3 Big", price: 99 }
+          ]
+        },
+        {
+          id: "sb-krackjack",
+          name: "Parle Krackjack Sweet & Salty Crackers",
+          category: "Snacks & Biscuits",
+          badge: "SWEET & SALTY",
+          description: "India's original crispy sweet-and-salty golden crackers for anytime tea-time munching.",
+          image: "./assets/products/krackjack.jpg",
+          containImage: true,
+          weights: [
+            { label: "₹10 Small Pack", price: 10 },
+            { label: "200g Big Pack", price: 38 },
+            { label: "400g Value Pack", price: 72 }
+          ]
+        },
+
+        // ====================================================================
+        // SECTION 3: OILS, SPICES & TEA (8 ITEMS)
+        // ====================================================================
+        {
+          id: "ost-singtel-oil",
+          name: "Pure Singtel Filtered Groundnut Oil",
+          category: "Oils, Spices & Tea",
+          badge: "100% SINGTEL",
+          description: "Cold-filtered aromatic Saurashtra groundnut cooking oil for daily Gujarati tadka, roti & home cooking.",
+          image: "./assets/products/singtel-oil.jpg",
+          containImage: true,
+          weights: [
+            { label: "1L Pouch", price: 178 },
+            { label: "5L Jar", price: 875 },
+            { label: "15kg Tin", price: 2590 }
+          ]
+        },
+        {
+          id: "ost-desi-ghee",
+          name: "Pure Danedar Desi Cow Ghee (Amul / Patanjali)",
+          category: "Oils, Spices & Tea",
+          badge: "DANEDAR GHEE",
+          description: "Rich granular aromatic golden cow ghee for rotli, khichdi, dal & festive sweets.",
+          image: "./assets/products/desi-ghee.jpg",
+          containImage: true,
+          weights: [
+            { label: "200ml Jar", price: 145 },
+            { label: "500ml Jar", price: 345 },
+            { label: "1L Jar", price: 675 }
+          ]
+        },
+        {
+          id: "ost-haldi-mirch",
+          name: "Selam Haldi & Kashmiri Mirch Masala Duo",
+          category: "Oils, Spices & Tea",
+          badge: "PURE SPICES",
+          description: "Vibrant high-curcumin turmeric & rich natural red Kashmiri chilli with zero artificial colour.",
+          image: "./assets/products/haldi-mirch.jpg",
+          weights: [
+            { label: "250g Each", price: 145 },
+            { label: "500g Each", price: 280 },
+            { label: "1kg Each", price: 545 }
+          ]
+        },
+        {
+          id: "ost-garam-masala",
+          name: "Shahi Surti Garam Masala & Dhana-Jeera Blend",
+          category: "Oils, Spices & Tea",
+          badge: "ROYAL AROMA",
+          description: "Freshly ground whole spice garam masala & fragrant coriander-cumin blend.",
+          image: "./assets/products/garam-masala.jpg",
+          weights: [
+            { label: "200g Pack", price: 78 },
+            { label: "500g Pack", price: 185 },
+            { label: "1kg Pack", price: 355 }
+          ]
+        },
+        {
+          id: "ost-chai-patti",
+          name: "Wagh Bakri & Kadak Assam CTC Tea Patti",
+          category: "Oils, Spices & Tea",
+          badge: "GUJARATI CHAI",
+          description: "Strong aromatic golden-liquor CTC tea granules blended specially for Surti morning chai.",
+          image: "./assets/products/chai-patti.jpg",
+          containImage: true,
+          weights: [
+            { label: "250g Pack", price: 95 },
+            { label: "500g Pack", price: 185 },
+            { label: "1kg Family", price: 360 }
+          ]
+        },
+        {
+          id: "ost-salt-sugar",
+          name: "Sendha Namak (Rock Salt) & Sulphur-Free Sugar",
+          category: "Oils, Spices & Tea",
+          badge: "DAILY ESSENTIAL",
+          description: "Pure Himalayan pink rock salt crystals & crystal-clean medium grain sulphur-free sugar.",
+          image: "./assets/products/salt-sugar.jpg",
+          weights: [
+            { label: "1kg Salt", price: 65 },
+            { label: "1kg Sugar", price: 48 },
+            { label: "Combo 2kg", price: 110 }
+          ]
+        },
+        {
+          id: "ost-poha-mamra",
+          name: "Indori Thick Poha & Kolhapuri Basmati Mamra",
+          category: "Oils, Spices & Tea",
+          badge: "BREAKFAST",
+          description: "Dust-free thick flattened rice for kanda-batata poha & crisp puffed rice for evening bhel.",
+          image: "./assets/products/poha-mamra.jpg",
+          weights: [
+            { label: "500g Pack", price: 34 },
+            { label: "1kg Pack", price: 65 },
+            { label: "2kg Pack", price: 126 }
+          ]
+        },
+        {
+          id: "ost-peanuts-chana",
+          name: "Haldi Roasted Peanuts (Sing) & Salted Chana",
+          category: "Oils, Spices & Tea",
+          badge: "SURAT CHAI SNACK",
+          description: "Crunchy golden roasted Gujarati groundnuts with haldi-salt & protein-rich roasted yellow chana.",
+          image: "./assets/products/peanuts-chana.jpg",
+          weights: [
+            { label: "250g Sing", price: 55 },
+            { label: "250g Chana", price: 45 },
+            { label: "500g Combo", price: 95 }
+          ]
+        },
+
+        // ====================================================================
+        // SECTION 4: HOUSEHOLD & CARE (8 ITEMS)
+        // ====================================================================
+        {
+          id: "hc-liquid-detergent",
+          name: "Surf Excel Matic & Ariel Liquid Detergent",
+          category: "Household & Care",
+          badge: "STAIN REMOVER",
+          description: "Gentle fabric-safe liquid wash for washing machines—dissolves fast with zero residue.",
+          image: "./assets/products/liquid-detergent.jpg",
+          containImage: true,
+          weights: [
+            { label: "1L Bottle", price: 145 },
+            { label: "2L Refill", price: 265 },
+            { label: "5L Can", price: 590 }
+          ]
+        },
+        {
+          id: "hc-dishwash-gel",
+          name: "Vim Lemon Power Dishwash Gel & Scrub Pack",
+          category: "Household & Care",
+          badge: "GREASE CUT",
+          description: "Concentrated real-lemon utensil cleaner gel—tough on burnt grease & gentle on hands.",
+          image: "./assets/products/dishwash-gel.jpg",
+          containImage: true,
+          weights: [
+            { label: "750ml Bottle", price: 110 },
+            { label: "1.5L Pouch", price: 195 },
+            { label: "2L Combo", price: 245 }
+          ]
+        },
+        {
+          id: "hc-bath-soap",
+          name: "Medimix Ayurvedic & Dettol Herbal Bath Soap",
+          category: "Household & Care",
+          badge: "HERBAL 4-PACK",
+          description: "Moisturizing 18-herb Ayurvedic & germ-protection neem bath soaps for daily family freshness.",
+          image: "./assets/products/bath-soap.jpg",
+          containImage: true,
+          weights: [
+            { label: "Single (125g)", price: 42 },
+            { label: "Pack of 4", price: 155 },
+            { label: "Family 8-Pack", price: 299 }
+          ]
+        },
+        {
+          id: "hc-toothpaste",
+          name: "Colgate Total & Patanjali Dant Kanti Toothpaste",
+          category: "Household & Care",
+          badge: "CAVITY CARE",
+          description: "Complete enamel cavity protection & herbal Ayurvedic clove gum care in family pack tubes.",
+          image: "./assets/products/toothpaste.jpg",
+          containImage: true,
+          weights: [
+            { label: "100g Tube", price: 58 },
+            { label: "200g Saver", price: 108 },
+            { label: "300g Twin Pack", price: 155 }
+          ]
+        },
+        {
+          id: "hc-floor-cleaner",
+          name: "Lizol Disinfectant Citrus Floor Cleaner",
+          category: "Household & Care",
+          badge: "99.9% GERM KILL",
+          description: "Sparkling tile & marble floor cleaner liquid with long-lasting fresh citrus scent.",
+          image: "./assets/products/floor-cleaner.jpg",
+          containImage: true,
+          weights: [
+            { label: "1L Bottle", price: 115 },
+            { label: "2L Refill", price: 210 },
+            { label: "5L Can", price: 465 }
+          ]
+        },
+        {
+          id: "hc-agarbatti-dhoop",
+          name: "Cycle Pure & Zed Black Agarbatti + Sambrani Cups",
+          category: "Household & Care",
+          badge: "MORNING POOJA",
+          description: "Low-smoke hand-rolled temple incense sticks & pure loban cow-dung sambrani dhoop cups.",
+          image: "./assets/products/agarbatti-dhoop.jpg",
+          weights: [
+            { label: "100g Box", price: 55 },
+            { label: "250g Jar", price: 125 },
+            { label: "Pooja Combo", price: 180 }
+          ]
+        },
+        {
+          id: "hc-tissue-rolls",
+          name: "Origami 2-Ply Soft Kitchen Towel Rolls & Napkins",
+          category: "Household & Care",
+          badge: "SUPER ABSORBENT",
+          description: "Food-grade virgin paper kitchen tissue rolls & absorbent dining table paper napkins.",
+          image: "./assets/products/tissue-rolls.jpg",
+          weights: [
+            { label: "2 Rolls", price: 95 },
+            { label: "4 Rolls Pack", price: 180 },
+            { label: "6 Rolls + Napkins", price: 265 }
+          ]
+        },
+        {
+          id: "hc-garbage-bags",
+          name: "Shalimar Heavy-Duty Tie-Tape Garbage Bags",
+          category: "Household & Care",
+          badge: "LEAK PROOF",
+          description: "Tear-resistant biodegradable kitchen dustbin roll liners with convenient tie-string.",
+          image: "./assets/products/garbage-bags.jpg",
+          weights: [
+            { label: "1 Roll (30 Bags)", price: 65 },
+            { label: "3 Rolls (90 Bags)", price: 180 },
+            { label: "6 Rolls Mega", price: 340 }
+          ]
+        }
+      ]
+    };
+
+    const SECTIONS_CONFIG = [
+      { id: "Essential Groceries", title: "1. 🌾 Essential Groceries & Daily Grains", subtitle: "Sortex-cleaned wheat, aged rice, pulses, and fresh stone-milled chakki atta.", icon: "🌾" },
+      { id: "Snacks & Biscuits", title: "2. 🥨 Snacks, Biscuits & Food Items", subtitle: "Crisp Balaji sev snacks, branded tea-time biscuits, and family packs.", icon: "🥨" },
+      { id: "Oils, Spices & Tea", title: "3. 🫒 Oils, Spices & Tea-Time Essentials", subtitle: "100% Saurashtra groundnut oil, Bilona cow ghee, pure spices & Wagh Bakri tea.", icon: "🫒" },
+      { id: "Household & Care", title: "4. 🧼 Household & Personal Care", subtitle: "Daily laundry, dishwashing, bathing, dental care & pooja essentials.", icon: "🧼" }
+    ];
+
+    (function bootstrapSupermart() {
+      // 0. Starting Ghanshyam Maharaj Loading Animation (2.3s -> Fast Slide Left + Fade)
+      const splash = document.getElementById("sacred-intro-splash");
+      const skipBtn = document.getElementById("splash-skip-btn");
+      const siteContainer = document.getElementById("site-root-container");
+
+      let splashDismissed = false;
+      function dismissSplash() {
+        if (splashDismissed || !splash) return;
+        splashDismissed = true;
+        splash.classList.add("splash-dismissed");
+        if (siteContainer) {
+          siteContainer.classList.add("site-reveal-enter");
+        }
+        setTimeout(() => {
+          splash.style.display = "none";
+        }, 460);
+      }
+
+      // Auto-dismiss after 2.3 seconds
+      const splashTimer = setTimeout(dismissSplash, 2300);
+
+      if (skipBtn) {
+        skipBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          clearTimeout(splashTimer);
+          dismissSplash();
+        });
+      }
+
+      if (splash) {
+        splash.addEventListener("click", () => {
+          clearTimeout(splashTimer);
+          dismissSplash();
+        });
+      }
+
+      // 1. Reactive State
+      const cart = {};
+      const selectedWeightIdx = {};
+      let activeCategory = "All";
+      let activePage = "home";
+      let fulfillmentMode = "Doorstep Home Delivery";
+      let customKiranaNotes = "";
+
+      // 2. Multi-Page SPA View Switcher with Shutter Curtain Transition
+      function navigateTo(pageId, categoryFilter = null) {
+        const shutter = document.getElementById("shutter-curtain");
+        const bladeTop = document.getElementById("shutter-blade-top");
+        const bladeBottom = document.getElementById("shutter-blade-bottom");
+
+        // Step A: Shutter Closes
+        shutter.classList.remove("pointer-events-none", "opacity-0");
+        shutter.classList.add("opacity-100");
+        bladeTop.style.transform = "translateY(0%)";
+        bladeBottom.style.transform = "translateY(0%)";
+
+        setTimeout(() => {
+          // Step B: Switch Active Page View
+          document.querySelectorAll(".page-view").forEach(v => v.classList.add("hidden"));
+          const target = document.getElementById("view-" + pageId);
+          if (target) target.classList.remove("hidden");
+          activePage = pageId;
+
+          // Update Nav Active Styling
+          document.querySelectorAll(".nav-link").forEach(btn => {
+            if (btn.dataset.page) {
+              const isActive = btn.dataset.page === pageId;
+              if (isActive) {
+                btn.className = "nav-link text-saffron border-b-2 border-saffron pb-0.5 transition font-bold";
+              } else {
+                btn.className = "nav-link text-muted hover:text-ink transition font-bold";
+              }
+            }
+          });
+
+          // Catalogue specific setup
+          if (pageId === "catalogue") {
+            if (categoryFilter) activeCategory = categoryFilter;
+            renderBentoCatalog();
+            updateFilterButtons();
+          }
+
+          window.scrollTo({ top: 0, behavior: "instant" });
+
+          // Step C: Shutter Opens
+          bladeTop.style.transform = "translateY(-100%)";
+          bladeBottom.style.transform = "translateY(100%)";
+
+          setTimeout(() => {
+            shutter.classList.add("opacity-0", "pointer-events-none");
+            shutter.classList.remove("opacity-100");
+          }, 320);
+        }, 280);
+      }
+
+      // Attach Nav Click Handlers
+      document.querySelectorAll(".nav-link").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const page = btn.dataset.page;
+          if (page) navigateTo(page);
+        });
+      });
+
+      // Shop Now Buttons
+      document.querySelectorAll(".btn-shop-now, #header-shop-now").forEach(btn => {
+        btn.addEventListener("click", () => navigateTo("catalogue", "All"));
+      });
+
+      // Aisle Card Clicks on Home
+      document.querySelectorAll(".aisle-card").forEach(card => {
+        card.addEventListener("click", () => {
+          const cat = card.dataset.cat;
+          navigateTo("catalogue", cat);
+        });
+      });
+
+      // Quick Search from Home
+      const homeSearchInput = document.getElementById("home-quick-search");
+      const homeSearchBtn = document.getElementById("home-quick-search-btn");
+      function triggerHomeSearch() {
+        const q = homeSearchInput.value.trim().toLowerCase();
+        navigateTo("catalogue", "All");
+        setTimeout(() => {
+          if (q) {
+            document.querySelectorAll(".product-article").forEach(el => {
+              const name = el.dataset.name.toLowerCase();
+              el.style.display = name.includes(q) ? "" : "none";
+            });
+          }
+        }, 350);
+      }
+      if (homeSearchBtn) homeSearchBtn.addEventListener("click", triggerHomeSearch);
+      if (homeSearchInput) homeSearchInput.addEventListener("keydown", (e) => { if (e.key === "Enter") triggerHomeSearch(); });
+
+      // 3. Render Catalog with Stacked Visual Aisles
+      const bentoContainer = document.getElementById("product-bento-grid");
+
+      function updateFilterButtons() {
+        document.querySelectorAll(".cat-filter-btn").forEach(btn => {
+          const isAct = btn.dataset.cat === activeCategory;
+          btn.className = isAct
+            ? "cat-filter-btn riso-box-sm shrink-0 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-ink text-paper"
+            : "cat-filter-btn riso-box-sm shrink-0 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-paper text-ink hover:bg-card";
+        });
+      }
+
+      function renderBentoCatalog() {
+        bentoContainer.innerHTML = "";
+
+        const sectionsToRender = activeCategory === "All"
+          ? SECTIONS_CONFIG
+          : SECTIONS_CONFIG.filter(s => s.id === activeCategory);
+
+        sectionsToRender.forEach(section => {
+          const sectionWrapper = document.createElement("div");
+          sectionWrapper.className = "aisle-section-block space-y-4";
+
+          // Section Aisle Header
+          const aisleHeader = document.createElement("div");
+          aisleHeader.className = "flex flex-col sm:flex-row justify-between items-start sm:items-end pb-3 border-b-2 border-ink/30 gap-1";
+          aisleHeader.innerHTML = `
+            <div>
+              <h3 class="font-display font-extrabold text-xl sm:text-2xl text-ink">${section.title}</h3>
+              <p class="text-xs text-muted mt-0.5">${section.subtitle}</p>
+            </div>
+            <span class="font-mono text-xs font-bold text-saffron bg-surface px-2.5 py-1 rounded-lg border border-ink/30">
+              ${SITE_CONFIG.catalog.filter(p => p.category === section.id).length} ITEMS
+            </span>
+          `;
+          sectionWrapper.appendChild(aisleHeader);
+
+          // Grid for this Aisle
+          const grid = document.createElement("div");
+          grid.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5";
+
+          const sectionItems = SITE_CONFIG.catalog.filter(p => p.category === section.id);
+
+          sectionItems.forEach((product, idx) => {
+            const wIdx = selectedWeightIdx[product.id] ?? (product.weights.length > 1 ? 1 : 0);
+            const activeWeight = product.weights[wIdx];
+            const cartKey = `${product.id}__${activeWeight.label}`;
+            const currentQty = cart[cartKey] ? cart[cartKey].qty : 0;
+
+            const card = document.createElement("article");
+            card.className = "product-article bg-card riso-box rounded-3xl overflow-hidden flex flex-col justify-between group";
+            card.dataset.name = product.name;
+
+            const weightButtonsHtml = product.weights.map((w, i) => {
+              const isSelected = i === wIdx;
+              return `<button type="button" data-action="weight" data-id="${product.id}" data-widx="${i}"
+                class="flex-1 py-1.5 rounded-lg font-mono text-[11px] font-bold border transition-colors ${
+                  isSelected
+                    ? "bg-ink text-paper border-ink"
+                    : "bg-paper/80 text-ink border-ink/35 hover:bg-paper"
+                }">
+                ${w.label}
+              </button>`;
+            }).join("");
+
+            card.innerHTML = `
+              <div>
+                <div class="relative h-44 overflow-hidden border-b-[1.5px] border-ink bg-surface">
+                  <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    loading="lazy"
+                    class="w-full h-full ${product.containImage ? 'object-contain p-3 bg-white/80' : 'object-cover'} transition-transform duration-300 group-hover:scale-105"
+                    onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                  />
+                  <div class="hidden w-full h-full flex items-center justify-center bg-surface p-4">
+                    <span class="text-3xl">${section.icon}</span>
+                  </div>
+                  <span class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-lg bg-paper/95 border border-ink font-mono text-[10px] text-ink font-bold">
+                    ${product.badge}
+                  </span>
+                </div>
+
+                <div class="p-4">
+                  <span class="font-mono text-[10px] uppercase tracking-wider text-saffron font-bold block">
+                    ${product.category}
+                  </span>
+                  <h4 class="font-display font-bold text-base sm:text-lg text-ink leading-snug mt-0.5">
+                    ${product.name}
+                  </h4>
+                  <p class="text-xs text-muted mt-1 leading-relaxed line-clamp-2">
+                    ${product.description}
+                  </p>
+
+                  <div class="mt-3.5">
+                    <span class="font-mono text-[10px] uppercase text-muted block mb-1 font-bold">PACK SIZE:</span>
+                    <div class="flex items-center gap-1.5">
+                      ${weightButtonsHtml}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="px-4 pb-4 pt-2 border-t border-ink/15 mt-2">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-[11px] text-muted">PRICE:</span>
+                  <span class="font-display font-extrabold text-lg text-ink">₹${activeWeight.price}</span>
+                </div>
+
+                ${
+                  currentQty > 0
+                    ? `<div class="flex items-center gap-2">
+                        <button type="button" data-action="decrement" data-id="${product.id}" data-wlabel="${activeWeight.label}"
+                                class="w-9 h-9 rounded-xl bg-ink text-paper font-bold text-base flex items-center justify-center riso-press">
+                          –
+                        </button>
+                        <span class="flex-1 text-center font-mono font-bold text-sm bg-paper py-1.5 rounded-xl border border-ink">
+                          ${currentQty} in slip
+                        </span>
+                        <button type="button" data-action="increment" data-id="${product.id}" data-wlabel="${activeWeight.label}"
+                                class="w-9 h-9 rounded-xl bg-saffron text-paper font-bold text-base flex items-center justify-center riso-press">
+                          +
+                        </button>
+                      </div>`
+                    : `<button type="button" data-action="add" data-id="${product.id}"
+                               class="riso-box-sm riso-press w-full py-2.5 px-4 rounded-xl bg-ink hover:bg-muted text-paper font-bold text-xs flex items-center justify-center gap-2">
+                        <span>+ Add to Kirana Slip</span>
+                      </button>`
+                }
+              </div>
+            `;
+            grid.appendChild(card);
+          });
+
+          sectionWrapper.appendChild(grid);
+          bentoContainer.appendChild(sectionWrapper);
+        });
+      }
+
+      // Category Filter Tab Clicks
+      document.querySelectorAll(".cat-filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          activeCategory = btn.dataset.cat;
+          updateFilterButtons();
+          renderBentoCatalog();
+        });
+      });
+
+      // 4. Cart Add / Weight Change Event Delegation
+      bentoContainer.addEventListener("click", (e) => {
+        const btn = e.target.closest("button");
+        if (!btn) return;
+        const action = btn.dataset.action;
+        const id = btn.dataset.id;
+        const product = SITE_CONFIG.catalog.find(p => p.id === id);
+        if (!product) return;
+
+        if (action === "weight") {
+          selectedWeightIdx[id] = parseInt(btn.dataset.widx, 10);
+        } else if (action === "add") {
+          const wIdx = selectedWeightIdx[id] ?? (product.weights.length > 1 ? 1 : 0);
+          const weight = product.weights[wIdx];
+          const key = `${id}__${weight.label}`;
+          cart[key] = {
+            productId: id,
+            name: product.name,
+            weightLabel: weight.label,
+            price: weight.price,
+            qty: 1
+          };
+        } else if (action === "increment") {
+          const wlabel = btn.dataset.wlabel;
+          const key = `${id}__${wlabel}`;
+          if (cart[key]) cart[key].qty += 1;
+        } else if (action === "decrement") {
+          const wlabel = btn.dataset.wlabel;
+          const key = `${id}__${wlabel}`;
+          if (cart[key]) {
+            if (cart[key].qty > 1) {
+              cart[key].qty -= 1;
+            } else {
+              delete cart[key];
+            }
+          }
+        }
+
+        renderBentoCatalog();
+        updateLiquidBasketDock();
+      });
+
+      // Quick Add Chips from Home Pad
+      document.querySelectorAll(".quick-add-chip").forEach(chip => {
+        chip.addEventListener("click", () => {
+          const id = chip.dataset.id;
+          const widx = parseInt(chip.dataset.widx, 10);
+          const product = SITE_CONFIG.catalog.find(p => p.id === id);
+          if (!product) return;
+          const weight = product.weights[widx];
+          const key = `${id}__${weight.label}`;
+          if (cart[key]) {
+            cart[key].qty += 1;
+          } else {
+            cart[key] = {
+              productId: id,
+              name: product.name,
+              weightLabel: weight.label,
+              price: weight.price,
+              qty: 1
+            };
+          }
+          updateLiquidBasketDock();
+          openReceiptDrawer();
+        });
+      });
+
+      // 5. Update Liquid Dock & Slip
+      const dockCountBadge = document.getElementById("dock-count-badge");
+      const dockPrimaryText = document.getElementById("dock-primary-text");
+      const dockSubText = document.getElementById("dock-sub-text");
+
+      function updateLiquidBasketDock() {
+        let totalItems = 0;
+        let subtotal = 0;
+        Object.values(cart).forEach(item => {
+          totalItems += item.qty;
+          subtotal += item.price * item.qty;
+        });
+
+        dockCountBadge.textContent = String(totalItems);
+
+        if (totalItems > 0 || customKiranaNotes.trim().length > 0) {
+          dockPrimaryText.textContent = `₹${subtotal} • ${totalItems} Items in Slip`;
+          dockSubText.textContent = `TAP TO SEND WHATSAPP ORDER`;
+        } else {
+          dockPrimaryText.textContent = "Supermart Grocery Cart";
+          dockSubText.textContent = "TAP ITEMS OR TYPE KIRANA LIST";
+        }
+      }
+
+      // 6. Sliding Receipt Drawer
+      const receiptBackdrop = document.getElementById("receipt-drawer-backdrop");
+      const closeReceiptBtn = document.getElementById("close-receipt-drawer-btn");
+      const receiptItemsList = document.getElementById("receipt-items-list");
+      const receiptSubtotal = document.getElementById("receipt-subtotal-display");
+      const receiptKiranaMirror = document.getElementById("receipt-kirana-mirror");
+      const homeKiranaText = document.getElementById("home-kirana-text");
+      const societySelect = document.getElementById("receipt-society-select");
+      const customSocietyWrap = document.getElementById("custom-society-wrapper");
+
+      // Populate Societies
+      SITE_CONFIG.deliverySocieties.forEach((soc, i) => {
+        const opt = document.createElement("option");
+        opt.value = soc;
+        opt.textContent = soc;
+        societySelect.appendChild(opt);
+      });
+
+      societySelect.addEventListener("change", () => {
+        if (societySelect.value.includes("Custom")) {
+          customSocietyWrap.classList.remove("hidden");
+        } else {
+          customSocietyWrap.classList.add("hidden");
+        }
+      });
+
+      function openReceiptDrawer() {
+        renderReceiptItems();
+        receiptBackdrop.classList.remove("hidden");
+        receiptBackdrop.classList.add("flex");
+      }
+
+      function closeReceiptDrawer() {
+        receiptBackdrop.classList.add("hidden");
+        receiptBackdrop.classList.remove("flex");
+      }
+
+      document.getElementById("liquid-basket-dock").addEventListener("click", openReceiptDrawer);
+      document.getElementById("hero-type-slip-btn").addEventListener("click", openReceiptDrawer);
+      document.getElementById("footer-open-slip").addEventListener("click", openReceiptDrawer);
+      closeReceiptBtn.addEventListener("click", closeReceiptDrawer);
+
+      // Sync Kirana Notes
+      if (homeKiranaText) {
+        homeKiranaText.addEventListener("input", () => {
+          customKiranaNotes = homeKiranaText.value;
+          receiptKiranaMirror.value = customKiranaNotes;
+          updateLiquidBasketDock();
+        });
+      }
+      receiptKiranaMirror.addEventListener("input", () => {
+        customKiranaNotes = receiptKiranaMirror.value;
+        if (homeKiranaText) homeKiranaText.value = customKiranaNotes;
+        updateLiquidBasketDock();
+      });
+
+      const homeSubmitListBtn = document.getElementById("home-submit-list-btn");
+      if (homeSubmitListBtn) {
+        homeSubmitListBtn.addEventListener("click", () => {
+          customKiranaNotes = homeKiranaText.value;
+          receiptKiranaMirror.value = customKiranaNotes;
+          openReceiptDrawer();
+        });
+      }
+
+      function renderReceiptItems() {
+        receiptItemsList.innerHTML = "";
+        let subtotal = 0;
+        const entries = Object.entries(cart);
+
+        if (entries.length === 0) {
+          receiptItemsList.innerHTML = `<p class="text-xs text-muted italic p-2 bg-paper rounded-xl text-center">No packaged catalogue items added yet. You can still type custom items below!</p>`;
+        } else {
+          entries.forEach(([key, item]) => {
+            subtotal += item.price * item.qty;
+            const row = document.createElement("div");
+            row.className = "flex items-center justify-between bg-paper p-2.5 rounded-xl border border-ink/20 text-xs";
+            row.innerHTML = `
+              <div>
+                <strong class="text-ink block">${item.name}</strong>
+                <span class="text-muted text-[11px]">${item.weightLabel} • ₹${item.price} each</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="font-mono font-bold text-ink">Qty: ${item.qty}</span>
+                <span class="font-display font-bold text-saffron">₹${item.price * item.qty}</span>
+              </div>
+            `;
+            receiptItemsList.appendChild(row);
+          });
+        }
+
+        receiptSubtotal.textContent = `₹${subtotal}`;
+      }
+
+      // Fulfillment mode buttons
+      document.querySelectorAll(".fulfill-toggle-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          fulfillmentMode = btn.dataset.fulfill;
+          document.querySelectorAll(".fulfill-toggle-btn").forEach(b => {
+            const isAct = b === btn;
+            b.setAttribute("aria-pressed", String(isAct));
+            b.className = isAct
+              ? "fulfill-toggle-btn riso-box-sm py-2.5 px-3 rounded-xl text-xs font-bold bg-ink text-paper"
+              : "fulfill-toggle-btn riso-box-sm py-2.5 px-3 rounded-xl text-xs font-bold bg-surface text-ink";
+          });
+        });
+      });
+
+      // Submit WhatsApp Order
+      const receiptForm = document.getElementById("receipt-submit-form");
+      receiptForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const flatNo = document.getElementById("receipt-flat-input").value.trim();
+        let soc = societySelect.value;
+        if (soc.includes("Custom")) {
+          soc = document.getElementById("receipt-custom-society").value.trim() || "Dabholi Resident";
+        }
+
+        let subtotal = 0;
+        let lines = [];
+        lines.push("*🛒 NEW GROCERY ORDER: LADILA SHRI GHANSHYAM*");
+        lines.push("📍 Dabholi Char Rasta, Surat");
+        lines.push("---------------------------------");
+
+        const entries = Object.entries(cart);
+        if (entries.length > 0) {
+          lines.push("*📦 PACKED CATALOGUE ITEMS:*");
+          entries.forEach(([k, it]) => {
+            const cost = it.price * it.qty;
+            subtotal += cost;
+            lines.push(`• ${it.name} (${it.weightLabel}) x ${it.qty} = ₹${cost}`);
+          });
+          lines.push(`*ESTIMATE: ₹${subtotal}*`);
+          lines.push("");
+        }
+
+        if (customKiranaNotes.trim().length > 0) {
+          lines.push("*📝 EXTRA MONTHLY KIRANA LIST:*");
+          lines.push(customKiranaNotes.trim());
+          lines.push("");
+        }
+
+        lines.push("*🛵 DELIVERY DETAILS:*");
+        lines.push(`• Mode: ${fulfillmentMode}`);
+        lines.push(`• Society: ${soc}`);
+        lines.push(`• Flat/House: ${flatNo}`);
+        lines.push("---------------------------------");
+        lines.push("Please confirm receipt & dispatch timing!");
+
+        const messageText = encodeURIComponent(lines.join("\n"));
+        const waUrl = `https://wa.me/919876543210?text=${messageText}`;
+
+        window.open(waUrl, "_blank");
+      });
+
+      // Initial Render
+      renderBentoCatalog();
+      updateLiquidBasketDock();
+
+    })();
+  </script>
+</body>
+</html>
