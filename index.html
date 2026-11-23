@@ -9,13 +9,19 @@
   <meta name="color-scheme" content="light" />
   <meta name="supported-color-schemes" content="light" />
 
-  <!-- Google Fonts: Fraunces (Heritage Display), Plus Jakarta Sans (UI), Space Mono (Batch Stamps) -->
+  <!-- Typography: Local Offline First with Google CDN Fallback -->
+  <link rel="stylesheet" href="./assets/fonts/fonts.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS: Local Offline First with CDN Fallback -->
+  <script src="./assets/tailwind.min.js"></script>
+  <script>
+    if (!window.tailwind) {
+      document.write('<script src="https://cdn.tailwindcss.com"><\/script>');
+    }
+  </script>
   <script>
     tailwind.config = {
       theme: {
